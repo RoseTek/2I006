@@ -20,8 +20,7 @@ void show_path(int *pred, int u, int v, FILE *f, Graphe *G, double *total_size, 
   	    *gammaMax = arr->calc_gamma;
   	}
     }
-  /* printf("%d ", v); */
-    /* fprintf(f, "%d ", v); */
+  fprintf(f, "%d ", v);
 }
 
 /* indices avec -1 => numerotation noeud commence à 1 */
@@ -61,8 +60,7 @@ int courtCheminLargeur(Graphe *G, int s, int dest, FILE *f, double *total_size, 
     }
   
   show_path(visit, origin, dest, f, G, total_size, gammaMax);
-  /* printf("-1\n"); */
-  /* fprintf(f, "-1\n"); */
+  fprintf(f, "-1\n");
   t = visit[dest-1];
   free(visit);
   return t;
@@ -89,12 +87,11 @@ int genereCheminMinCommodite(Graphe *G, char *file, int option)
     }
   fclose(f);
 
-  
-  /* if (option == 1) */
-  /*   { */
-  printf("Total size : %.2f\t", total_size);
-  printf("Gamma max : %d\n", gammaMax);
-  printf("evaluation %s : %.2f/100\n", file, evaluation_NChaines(gammaMax,total_size,file));
-  /* } */
+  if (option == 1)
+    {
+      printf("Total size : %.2f\t", total_size);
+      printf("Gamma max : %d\n", gammaMax);
+      printf("evaluation %s : %.2f/100\n", file, evaluation_NChaines(gammaMax,total_size,file));
+    }
   return 0;
 }

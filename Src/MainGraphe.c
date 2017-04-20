@@ -53,7 +53,6 @@ int main(int argc,char**argv){
       break;
     case 3:
       djikstraMinCommodite(&G, argv[1]);
-      /* djikstraMinCommodite(&G, "00014_burma"); */
       break;
     default:
       printf("No method for this number\n");

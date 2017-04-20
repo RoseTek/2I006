@@ -1,0 +1,32 @@
+		00783_rat
+	parcours largeur
+real	   0m0.023s
+user	   0m0.020s
+sys	   0m0.000s
+
+	Djikstra
+real	   0m0.155s
+user	   0m0.116s
+sys	   0m0.000s
+
+*-------------------------------------------------------------*
+		05934_rl
+        parcours largeur
+real	   0m0.576s
+user	   0m0.564s
+sys	   0m0.004s
+	Djikstra
+real	   0m44.073s
+user	   0m43.980s
+sys	   0m0.008s
+
+*-------------------------------------------------------------*
+		07397_pla
+	parcours largeur
+real	   0m0.817s
+user	   0m0.804s
+sys	   0m0.000s
+	Djikstra
+real	   1m17.079s
+user	   1m16.916s
+sys	   0m0.028s

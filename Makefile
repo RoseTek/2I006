@@ -15,7 +15,9 @@ NAME	=	MainGraphe
 
 RM	=	rm -f
 
-CFLAGS	=	-lm -I./Inc
+CFLAGS	=	-lm -I./Inc -O3
+
+CC	=	gcc
 
 .SILENT:
 

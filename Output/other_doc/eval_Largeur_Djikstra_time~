@@ -1,0 +1,36 @@
+		00783_rat
+	parcours largeur
+real	   0m0.023s
+user	   0m0.020s
+sys	   0m0.000s
+
+	Djikstra
+real	   0m0.155s
+user	   0m0.116s
+sys	   0m0.000s
+
+*-------------------------------------------------------------*
+	parcours largeur
+Total size : 33467313.90	Gamma max : 300
+evaluation 05934_rl : 47.02/100
+
+real	   0m0.576s
+user	   0m0.564s
+sys	   0m0.004s
+	Djikstra
+real	   0m44.073s
+user	   0m43.980s
+sys	   0m0.008s
+
+*-------------------------------------------------------------*
+	parcours largeur
+real	   0m0.817s
+user	   0m0.804s
+sys	   0m0.000s
+	Djikstra
+Total size : 1852477205.87	Gamma max : 1312
+evaluation 07397_pla : 34.63/100
+
+real	   1m17.079s
+user	   1m16.916s
+sys	   0m0.028s

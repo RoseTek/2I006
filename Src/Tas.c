@@ -1,4 +1,5 @@
 #include <limits.h>
+#include <float.h>
 #include "Tas.h"
 
 static int racine(){
@@ -18,7 +19,7 @@ static int filsDroit(int i){
 }
 
 static int pere(int i){
-  return 1/2;
+  return i/2;
 }
 
 int taille(Tas *tas){
@@ -52,9 +53,26 @@ static void monter(Tas *t, int i){
 
   int papa = pere(i);
   if (t->tab[papa].dist > t->tab[i].dist){
+    /* if (papa == 0) */
+    /*   { */
+    /* 	printf("\toriginal\n"); */
+    /* 	printf("           %d\n", t->tab[1]); */
+    /* 	printf("       %d      %d\n", t->tab[2], t->tab[3]); */
+    /* 	printf("%d    %d        %d     %d\n", t->tab[4], t->tab[5],t->tab[6], t->tab[7]); */
+    /*   } */
+    /* printf("et on monte le pt %d car %.2f > %.2f POUR %d, papa : %d\n", t->tab[i].s ,t->tab[papa].dist, t->tab[i].dist, i, papa); */
     echanger(t,i,papa);
     monter(t,papa);
+    /* if (papa == 0) */
+    /*   { */
+    /* 	printf("\tfinal\n"); */
+    /* 	printf("           %d\n", t->tab[1]); */
+    /* 	printf("       %d      %d\n", t->tab[2], t->tab[3]); */
+    /* 	printf("%d    %d        %d     %d\n", t->tab[4], t->tab[5],t->tab[6], t->tab[7]); */
+    /*   } */
   }
+  /* else */
+  /*   printf("en fait non!  %.2f < %.2f\n", t->tab[papa].dist, t->tab[i].dist); */
 }
 
 static int plusPetitFils(Tas *t, int i)
@@ -84,14 +102,30 @@ static Elem_Tas min(Tas *t)
   return t->tab[racine()];
 }
 
-void insereElem(Tas *t, int sommet, double dist) {
-  if (t->n >= t->max) {
-    t->tab = realloc(t->tab, t->max*2);
-    t->max = t->max*2;
+//cherche sommet
+//return 1 si sommet trouvé
+//return 0 sinon
+//si sommet trouvé, dist min mise à jour
+int findElem(Tas *t, int sommet, double dist) {
+  int i;
+
+  for (i=0 ; i<t->max ; i++){
+    if ((t->tab[i]).s == sommet){
+      if ((t->tab[i]).dist > dist)
+	(t->tab[i]).dist = dist;
+      return 1;
+    }
   }
-  t->n++;
-  t->tab[t->n].dist = dist;
-  t->tab[t->n].s = sommet;
+  return 0;
+}
+
+void insereElem(Tas *t, int sommet, double dist) {
+
+  if (!findElem(t, sommet, dist)){
+    t->n++;
+    t->tab[t->n].dist = dist;
+    t->tab[t->n].s = sommet;
+  }
   monter(t,t->n);
 }
 
@@ -104,9 +138,16 @@ static void suppMin(Tas *t) {
 
 void creationTas(Tas *tas, Graphe *G)
 {
-  tas->tab = malloc(sizeof(Elem_Tas) * (G->nbsom + 1)*3);
+  int i;
+  
+  tas->tab = malloc(sizeof(Elem_Tas) * (G->nbsom + 1));
   tas->n = 0;
   tas->max = G->nbsom;
+  for (i=0 ; i<tas->max ; i++)
+    {
+      tas->tab[i].s = -1;
+      tas->tab[i].dist = DBL_MAX;
+    }
 }
 
 int popElem(Tas *tas)

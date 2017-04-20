@@ -8,24 +8,23 @@
 
 void majBordure(Tas *bordure, Sommet *s, double *dist, int *pred, int *marque)
 {
-  int i;
-  Arete *arete;
+  int i = 0;
+  Arete *arete = NULL;
   Cellule_arete *arr = s->L_voisin;
 
-  while (arr) {
+  while (arr){
     arete = arr->a;
     if (arete->u == s->num)
       i = arete->v;
     else
       i = arete->u;
-    if (marque[i - 1] == 0)
-      {
-	if ((dist[i - 1]) >= (dist[s->num - 1] + arete->longueur)) {
-	  dist[i - 1] = dist[s->num - 1] + arete->longueur;
-	  pred[i - 1] = s->num;
-	  insereElem(bordure, i, dist[i-1]);
-	}
+    if (marque[i - 1] == 0){
+      if ((dist[i - 1]) >= (dist[s->num - 1] + arete->longueur)){
+    	dist[i - 1] = dist[s->num - 1] + arete->longueur;
+    	pred[i - 1] = s->num;
+    	insereElem(bordure, i, dist[i-1]);
       }
+    }
     arr = arr->suiv;
   }
 }
@@ -43,7 +42,7 @@ Sommet *rechercheSommet(int sommet, Graphe *G)
   return NULL;
 }
 
-int algoDjikstra(Graphe *G, int r, int dest, FILE *file, double *total_size, int *gammaMax)
+int algoDjikstra(Graphe *G, int r, int dest, FILE *f, double *total_size, int *gammaMax)
 {
   int i, sommet;
   int *pred, *marque;
@@ -77,11 +76,12 @@ int algoDjikstra(Graphe *G, int r, int dest, FILE *file, double *total_size, int
       marque[sommet - 1] = 1;
       majBordure(&bordure, s, dist, pred, marque);
     }
-  show_path(pred, r, dest, file, G, total_size, gammaMax);
-  /* printf("-1\n"); */
+  show_path(pred, r, dest, f, G, total_size, gammaMax);
+  fprintf(f,"-1\n");
   free(pred);
   free(dist);
   free(marque);
+  libereTas(&bordure);
   return 0;
 }
 
@@ -90,23 +90,24 @@ int djikstraMinCommodite(Graphe *G, char *file)
   int i, u, v, gammaMax=0;
   FILE *f = NULL;
   double total_size = 0;
+  char filenamencha[205];
+
+  strcpy(filenamencha,"Output/\0");
+  strcat(filenamencha,file);
+  strcat(filenamencha,".ncha");
   
-  /* ouverture file */
+  if ((f=fopen(filenamencha,"w")) == NULL)
+    return 1;
   for (i=0 ; i<G->nbcommod ; i++)
     {
       u = G->T_commod[i].e1;
       v = G->T_commod[i].e2;
-      /* printf("\tGO %d %d\n", u, v); */
       algoDjikstra(G, u, v, f, &total_size, &gammaMax);
-      /* printf("\tNEXT\n\n"); */
     }
-  /* fclose(f); */
-
+  fclose(f);
   
   printf("Total size : %.2f\t", total_size);
   printf("Gamma max : %d\n", gammaMax);
-  printf("evaluation %s : %.2f/100\n", file, evaluation_NChaines(gammaMax,total_size,file));
-  
-
+  printf("evaluation %s : %.2f/100\n", file, evaluation_NChaines(gammaMax,total_size,file));  
   return 0;
 }
