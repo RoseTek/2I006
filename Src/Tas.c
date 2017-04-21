@@ -53,26 +53,9 @@ static void monter(Tas *t, int i){
 
   int papa = pere(i);
   if (t->tab[papa].dist > t->tab[i].dist){
-    /* if (papa == 0) */
-    /*   { */
-    /* 	printf("\toriginal\n"); */
-    /* 	printf("           %d\n", t->tab[1]); */
-    /* 	printf("       %d      %d\n", t->tab[2], t->tab[3]); */
-    /* 	printf("%d    %d        %d     %d\n", t->tab[4], t->tab[5],t->tab[6], t->tab[7]); */
-    /*   } */
-    /* printf("et on monte le pt %d car %.2f > %.2f POUR %d, papa : %d\n", t->tab[i].s ,t->tab[papa].dist, t->tab[i].dist, i, papa); */
     echanger(t,i,papa);
     monter(t,papa);
-    /* if (papa == 0) */
-    /*   { */
-    /* 	printf("\tfinal\n"); */
-    /* 	printf("           %d\n", t->tab[1]); */
-    /* 	printf("       %d      %d\n", t->tab[2], t->tab[3]); */
-    /* 	printf("%d    %d        %d     %d\n", t->tab[4], t->tab[5],t->tab[6], t->tab[7]); */
-    /*   } */
   }
-  /* else */
-  /*   printf("en fait non!  %.2f < %.2f\n", t->tab[papa].dist, t->tab[i].dist); */
 }
 
 static int plusPetitFils(Tas *t, int i)
@@ -103,25 +86,23 @@ static Elem_Tas min(Tas *t)
 }
 
 //cherche sommet
-//return 1 si sommet trouvé
+//return un int positif si sommet trouvé
 //return 0 sinon
 //si sommet trouvé, dist min mise à jour
-int findElem(Tas *t, int sommet, double dist) {
-  int i;
-
-  for (i=0 ; i<t->max ; i++){
-    if ((t->tab[i]).s == sommet){
-      if ((t->tab[i]).dist > dist)
-	(t->tab[i]).dist = dist;
-      return 1;
-    }
+int findElem(Tas *t, int sommet, double dist, int current) {
+  if (current >= t->n)
+    return 0;
+  if (t->tab[current].s == sommet){
+    if (t->tab[current].dist > dist)
+      t->tab[current].dist = dist;
+    return 1;
   }
-  return 0;
+  return findElem(t, sommet, dist, filsGauche(current)) + findElem(t, sommet, dist, filsDroit(current));
 }
 
 void insereElem(Tas *t, int sommet, double dist) {
 
-  if (!findElem(t, sommet, dist)){
+  if (!findElem(t, sommet, dist, 1)){
     t->n++;
     t->tab[t->n].dist = dist;
     t->tab[t->n].s = sommet;

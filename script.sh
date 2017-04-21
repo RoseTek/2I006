@@ -24,21 +24,21 @@ make clean
 
 
 
-echo "parcours largeur"
-time ./MainGraphe "00783_rat" 2
-echo "Djikstra"
+# echo "parcours largeur"
+# time ./MainGraphe "00783_rat" 2
+# echo "Djikstra"
 time ./MainGraphe "00783_rat" 3
 
 echo ""
 echo "*-------------------------------------------------------------*"
-echo "parcours largeur"
-time ./MainGraphe "05934_rl" 2
-echo "Djikstra"
+# echo "parcours largeur"
+# time ./MainGraphe "05934_rl" 2
+# echo "Djikstra"
 time ./MainGraphe "05934_rl" 3
 
 echo ""
 echo "*-------------------------------------------------------------*"
-echo "parcours largeur"
-time ./MainGraphe "07397_pla" 2
-echo "Djikstra"
+# echo "parcours largeur"
+# time ./MainGraphe "07397_pla" 2
+# echo "Djikstra"
 time ./MainGraphe "07397_pla" 3

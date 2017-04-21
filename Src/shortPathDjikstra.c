@@ -77,7 +77,7 @@ int algoDjikstra(Graphe *G, int r, int dest, FILE *f, double *total_size, int *g
       majBordure(&bordure, s, dist, pred, marque);
     }
   show_path(pred, r, dest, f, G, total_size, gammaMax);
-  fprintf(f,"-1\n");
+  /* fprintf(f,"-1\n"); */
   free(pred);
   free(dist);
   free(marque);
@@ -106,8 +106,8 @@ int djikstraMinCommodite(Graphe *G, char *file)
     }
   fclose(f);
   
-  printf("Total size : %.2f\t", total_size);
-  printf("Gamma max : %d\n", gammaMax);
-  printf("evaluation %s : %.2f/100\n", file, evaluation_NChaines(gammaMax,total_size,file));  
+  /* printf("Total size : %.2f\t", total_size); */
+  /* printf("Gamma max : %d\n", gammaMax); */
+  /* printf("evaluation %s : %.2f/100\n", file, evaluation_NChaines(gammaMax,total_size,file));   */
   return 0;
 }

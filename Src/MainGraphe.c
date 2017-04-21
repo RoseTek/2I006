@@ -29,7 +29,6 @@ int main(int argc,char**argv){
   strcat(filenameres,".res");
 
   FILE *f=fopen(filenameres,"r");
-  /* FILE *f=fopen("Ressource/00014_burma.res","r"); */
 
   if (f==NULL){
     printf("Probleme lecture du fichier\n");

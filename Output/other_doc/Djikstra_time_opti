@@ -1,0 +1,55 @@
+int findElem(Tas *t, int sommet, double dist) {
+  int i;
+
+  for (i=0 ; i<t->max ; i++){
+      if ((t->tab[i]).s == sommet){
+          if ((t->tab[i]).dist > dist)
+              (t->tab[i]).dist = dist;
+          return 1;
+      }
+  }
+  return 0;
+}
+
+	findElem en O(n) avec n la taille du tas
+
+
+real	0m0.115s
+user	0m0.108s
+sys	0m0.000s
+*-------------------*
+real	0m51.404s
+user	0m51.344s
+sys	0m0.016s
+*-------------------*
+real	1m27.863s
+user	1m27.796s
+sys	0m0.016s
+
+____________________________________________________________________________________________________________
+
+
+int findElem(Tas *t, int sommet, double dist, int current) {
+  if (current >= t->n)
+    return 0;
+  if (t->tab[current].s == sommet){
+    if (t->tab[current].dist > dist)
+       t->tab[current].dist = dist;
+    return 1;
+  }
+  return findElem(t, sommet, dist, filsGauche(current)) + findElem(t, sommet, dist, filsDroit(current));
+}
+
+		Le pire cas est tj en O(n) mais meilleure esperance
+
+real	0m0.068s
+user	0m0.064s
+sys	0m0.000s
+*-------------------*
+real	0m24.961s
+user	0m24.932s
+sys	0m0.016s
+*-------------------*
+real	0m43.144s
+user	0m43.100s
+sys	0m0.024s
