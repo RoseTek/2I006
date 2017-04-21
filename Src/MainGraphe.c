@@ -15,7 +15,8 @@ int main(int argc,char**argv){
     printf("0 : generation image html\n");
     printf("1 : parcours en largeur\n");
     printf("2 : parcours en largeur avec evaluation de la solution\n");
-    printf("3 : algorithme de Djikstra avec evaluation de la solution\n");
+    printf("3 : algorithme de Dijkstra avec evaluation de la solution\n");
+    printf("4 : algorithme custom\n");
     return 1;
   }
 
@@ -52,6 +53,9 @@ int main(int argc,char**argv){
       break;
     case 3:
       djikstraMinCommodite(&G, argv[1]);
+      break;
+    case 4:
+      shortPathAmeliore(&G, argv[1]);
       break;
     default:
       printf("No method for this number\n");

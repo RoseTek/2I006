@@ -6,7 +6,7 @@
 #include "Tas.h"
 #include "evaluation_NChaines.h"
 
-void majBordure(Tas *bordure, Sommet *s, double *dist, int *pred, int *marque)
+static void majBordure(Tas *bordure, Sommet *s, double *dist, int *pred, int *marque)
 {
   int i = 0;
   Arete *arete = NULL;
@@ -79,7 +79,7 @@ int algoDjikstra(Graphe *G, int r, int dest, FILE *f, double *total_size, int *g
       majBordure(&bordure, s, dist, pred, marque);
     }
   show_path(pred, r, dest, f, G, total_size, gammaMax);
-  fprintf(f,"-1\n");
+  /* fprintf(f,"-1\n"); */
   free(pred);
   free(dist);
   free(marque);

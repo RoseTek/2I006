@@ -1,0 +1,143 @@
+       parcours largeur
+Total size : 111541.67  Gamma max : 50
+evaluation 00783_rat : 52.73/100
+        Djikstra
+Total size : 92070.96   Gamma max : 68
+evaluation 00783_rat : 23.98/100
+-----------------
+	Parametre 10.00
+Total size : 107161.30	Gamma max : 21
+evaluation 00783_rat : 86.72/100
+
+	Parametre 20.00
+Total size : 110484.29	Gamma max : 21
+evaluation 00783_rat : 84.07/100
+
+	Parametre 30.00
+Total size : 112991.63	Gamma max : 22
+evaluation 00783_rat : 82.07/100
+
+	Parametre 40.00
+Total size : 114483.10	Gamma max : 22
+evaluation 00783_rat : 80.88/100
+
+	Parametre 50.00
+Total size : 115892.37	Gamma max : 22
+evaluation 00783_rat : 79.76/100
+
+	Parametre 60.00
+Total size : 116178.41	Gamma max : 22
+evaluation 00783_rat : 79.53/100
+
+	Parametre 70.00
+Total size : 116509.79	Gamma max : 22
+evaluation 00783_rat : 79.27/100
+
+	Parametre 80.00
+Total size : 116512.14	Gamma max : 23
+evaluation 00783_rat : 79.26/100
+
+	Parametre 90.00
+Total size : 116722.87	Gamma max : 23
+evaluation 00783_rat : 79.10/100
+
+	Parametre 100.00
+Total size : 116780.90	Gamma max : 21
+evaluation 00783_rat : 79.05/100
+
+______________________________________________________
+        parcours largeur
+Total size : 33467313.90        Gamma max : 300
+evaluation 05934_rl : 47.02/100
+        Djikstra
+Total size : 20907102.22        Gamma max : 223
+evaluation 05934_rl : 79.76/100
+-----------------
+	Parametre 10.00
+Total size : 23703266.21	Gamma max : 135
+evaluation 05934_rl : 92.75/100
+
+	Parametre 20.00
+Total size : 25064662.28	Gamma max : 132
+evaluation 05934_rl : 89.30/100
+
+	Parametre 30.00
+Total size : 25848238.63	Gamma max : 131
+evaluation 05934_rl : 87.31/100
+
+	Parametre 40.00
+Total size : 26313411.23	Gamma max : 131
+evaluation 05934_rl : 86.13/100
+
+	Parametre 50.00
+Total size : 26665650.22	Gamma max : 132
+evaluation 05934_rl : 85.23/100
+
+	Parametre 60.00
+Total size : 26978593.76	Gamma max : 132
+evaluation 05934_rl : 84.44/100
+
+	Parametre 70.00
+Total size : 27196271.69	Gamma max : 132
+evaluation 05934_rl : 83.89/100
+
+	Parametre 80.00
+Total size : 27359486.69	Gamma max : 132
+evaluation 05934_rl : 83.47/100
+
+	Parametre 90.00
+Total size : 27469025.97	Gamma max : 132
+evaluation 05934_rl : 83.19/100
+
+	Parametre 100.00
+Total size : 27683602.66	Gamma max : 131
+evaluation 05934_rl : 82.65/100
+
+______________________________________________________
+        parcours largeur
+Total size : 2602531252.73      Gamma max : 1318
+evaluation 07397_pla : 24.44/100
+        Djikstra
+Total size : 1852477205.87      Gamma max : 1312
+evaluation 07397_pla : 34.63/100
+-----------------
+	Parametre 10.00
+Total size : 1902442952.05	Gamma max : 1299
+evaluation 07397_pla : 36.41/100
+
+	Parametre 20.00
+Total size : 1949874961.77	Gamma max : 1204
+evaluation 07397_pla : 49.59/100
+
+	Parametre 30.00
+Total size : 1982934386.84	Gamma max : 1127
+evaluation 07397_pla : 60.13/100
+
+	Parametre 40.00
+Total size : 2011245997.32	Gamma max : 1087
+evaluation 07397_pla : 65.39/100
+
+	Parametre 50.00
+Total size : 2031928971.00	Gamma max : 1059
+evaluation 07397_pla : 68.95/100
+
+	Parametre 60.00
+Total size : 2049219320.10	Gamma max : 1034
+evaluation 07397_pla : 72.03/100
+
+	Parametre 70.00
+Total size : 2064803947.01	Gamma max : 1014
+evaluation 07397_pla : 74.36/100
+
+	Parametre 80.00
+Total size : 2078572936.50	Gamma max : 996
+evaluation 07397_pla : 76.35/100
+
+	Parametre 90.00
+Total size : 2090260591.34	Gamma max : 982
+evaluation 07397_pla : 77.78/100
+
+	Parametre 100.00
+Total size : 2103163409.76	Gamma max : 972
+evaluation 07397_pla : 78.62/100
+
