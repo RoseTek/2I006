@@ -85,6 +85,8 @@ static Elem_Tas min(Tas *t)
   return t->tab[racine()];
 }
 
+
+
 //cherche sommet
 //return un int positif si sommet trouvé
 //return 0 sinon
@@ -129,6 +131,13 @@ void creationTas(Tas *tas, Graphe *G)
       tas->tab[i].s = -1;
       tas->tab[i].dist = DBL_MAX;
     }
+}
+
+double getNextDist(Tas *tas)
+{
+  Elem_Tas mn = min(tas);
+
+  return mn.dist;
 }
 
 int popElem(Tas *tas)

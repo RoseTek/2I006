@@ -53,3 +53,24 @@ sys	0m0.016s
 real	0m43.144s
 user	0m43.100s
 sys	0m0.024s
+
+____________________________________________________________________________________________________________
+
+ if (getNextDist(&bordure) > dist[dest - 1])
+         break;
+dans algoDjikstra
+
+		S'arrete de pop les elements de la bordure quand on a des priorités plus grandes que la meilleure distance trouvée
+
+
+real	   0m0.037s
+user	   0m0.032s
+sys	   0m0.000s
+*-------------------*
+real	   0m13.062s
+user	   0m13.036s
+sys	   0m0.008s
+*-------------------*
+real	   0m23.793s
+user	   0m23.744s
+sys	   0m0.032s

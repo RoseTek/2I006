@@ -1,13 +1,4 @@
-SRCS	=	Src/MainGraphe.c		\
-		Src/Graphe.c			\
-		Src/entree_sortie.c		\
-		Src/SVGwriter.c			\
-		Src/Struct_File.c		\
-		Src/Struct_Liste.c		\
-		Src/evaluation_NChaines.c	\
-		Src/shortPath.c			\
-		Src/shortPathDjikstra.c		\
-		Src/Tas.c
+SRCS	=	$(shell find Src -name '*.c')
 
 OBJS	=	$(SRCS:.c=.o)
 
@@ -19,7 +10,7 @@ CFLAGS	=	-lm -I./Inc -O3
 
 CC	=	gcc
 
-.SILENT:
+.SILENT: 
 
 all: $(NAME)
 

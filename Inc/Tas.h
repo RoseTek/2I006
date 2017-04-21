@@ -19,6 +19,7 @@ typedef struct tas {
 int taille(Tas *tas);
 void creationTas(Tas *tas, Graphe *G);
 int popElem(Tas *tas);
+double getNextDist(Tas *tas);
 /* int estPresent(Tas *tas, int elem); */
 void insereElem(Tas *tas, int num_sommet, double dist);
 void libereTas(Tas *tas);
