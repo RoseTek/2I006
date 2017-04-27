@@ -3,8 +3,6 @@
 
 #include "Graphe.h"
 
-/* TAS A REALISER APRES */
-
 typedef struct elemTas{
   int s;
   double dist;

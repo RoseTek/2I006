@@ -79,7 +79,7 @@ int algoDjikstra(Graphe *G, int r, int dest, FILE *f, double *total_size, int *g
       majBordure(&bordure, s, dist, pred, marque);
     }
   show_path(pred, r, dest, f, G, total_size, gammaMax);
-  /* fprintf(f,"-1\n"); */
+  fprintf(f,"-1\n");
   free(pred);
   free(dist);
   free(marque);

@@ -85,8 +85,6 @@ static Elem_Tas min(Tas *t)
   return t->tab[racine()];
 }
 
-
-
 //cherche sommet
 //return un int positif si sommet trouvé
 //return 0 sinon

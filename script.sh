@@ -8,12 +8,12 @@ make clean
 #     ./MainGraphe $(basename $file .res) 1
 # done
 
+
 # parcours largeur + evaluation sur les 3 fichiers
 # ./MainGraphe "00783_rat" 2
 # ./MainGraphe "05934_rl" 2
 # ./MainGraphe "07397_pla" 2
 
-# echo ""
 
 # court chemin avec algo de Djikstra + evaluation sur les 3 fichiers
 # valgrind ./MainGraphe "00783_rat" 3
@@ -21,18 +21,15 @@ make clean
 # valgrind ./MainGraphe "07397_pla" 3
 
 
-
 # echo "parcours largeur"
 # time ./MainGraphe "00783_rat" 2
 # echo "Djikstra"
 # time ./MainGraphe "00783_rat" 3
-
 # echo "*-------------------------------------------------------------*"
 # echo "parcours largeur"
 # time ./MainGraphe "05934_rl" 2
 # echo "Djikstra"
 # time ./MainGraphe "05934_rl" 3
-
 # echo "*-------------------------------------------------------------*"
 # echo "parcours largeur"
 # time ./MainGraphe "07397_pla" 2
@@ -40,7 +37,8 @@ make clean
 # time ./MainGraphe "07397_pla" 3
 
 
-#TESTS PARTIE 3
+#______________________________________________________TESTS OPTIMISATION
+
 # ------------------- TEST TEMPS ------------------ #
 # echo "               DJIKSTRA
 # real    0m0.037s
@@ -48,7 +46,6 @@ make clean
 # sys     0m0.000s
 # -----------------"
 # time ./MainGraphe "00783_rat" 4
-
 # echo "______________________________________________________
 #                DJIKSTRA
 # real    0m13.062s
@@ -56,7 +53,6 @@ make clean
 # sys     0m0.008s
 # -----------------"
 # time ./MainGraphe "05934_rl" 4
-
 # echo "______________________________________________________
 #                DJIKSTRA
 # real    0m23.793s
@@ -64,6 +60,8 @@ make clean
 # sys     0m0.032s
 # -----------------"
 # time ./MainGraphe "07397_pla" 4
+
+
 
 
 # ------------------ TEST EVALUATION -------------------- #

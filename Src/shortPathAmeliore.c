@@ -6,7 +6,6 @@
 #include "Tas.h"
 #include "evaluation_NChaines.h"
 
-/* travailler sur le coefficient : gamma ? longueur de l'arete a pondérer aussi ? */
 static double distFunction(Arete *arete, double parametre)
 {
   return arete->longueur + arete->calc_gamma * parametre;
@@ -72,7 +71,7 @@ static int algoDjikstraAmeliore(Graphe *G, int r, int dest, FILE *f, double *tot
       majBordure(&bordure, s, dist, pred, marque, parametre);
     }
   show_path(pred, r, dest, f, G, total_size, gammaMax);
-  /* fprintf(f,"-1\n"); */
+  fprintf(f,"-1\n");
   free(pred);
   free(dist);
   free(marque);
@@ -97,40 +96,40 @@ static void reinit_gamma(Graphe *G)
     }
 }
 
+/* En commentaire : code permettant de tester différents coeff pour le gamma */
 int shortPathAmeliore(Graphe *G, char *file)
 {
   int i, u, v;
   FILE *f = NULL;
 
   char filenamencha[205];
-  double parametre=10.;
+  double parametre=100.;
   
-  /* strcpy(filenamencha,"Output/\0"); */
-  /* strcat(filenamencha,file); */
-  /* strcat(filenamencha,".ncha"); */
+  strcpy(filenamencha,"Output/\0");
+  strcat(filenamencha,file);
+  strcat(filenamencha,".ncha");
   
-  /* if ((f=fopen(filenamencha,"w")) == NULL) */
-  /*   return 1; */
-  f = stdout;
+  if ((f=fopen(filenamencha,"w")) == NULL)
+    return 1;
   /* while (parametre <= 100.) */
   /*   { */
-      int gammaMax=0;
-      double total_size = 0;
-      for (i=0 ; i<G->nbcommod ; i++)
-	{
-	  u = G->T_commod[i].e1;
-	  v = G->T_commod[i].e2;				   
-	  algoDjikstraAmeliore(G, u, v, f, &total_size, &gammaMax, parametre);
-	}
-      /* fclose(f); */
+  int gammaMax=0;
+  double total_size = 0;
+  for (i=0 ; i<G->nbcommod ; i++)
+    {
+      u = G->T_commod[i].e1;
+      v = G->T_commod[i].e2;				   
+      algoDjikstraAmeliore(G, u, v, f, &total_size, &gammaMax, parametre);
+    }
+  fclose(f);
   
-      printf("\tParametre %.2f\n", parametre);
-      printf("Total size : %.2f\t", total_size);
-      printf("Gamma max : %d\n", gammaMax);
-      printf("evaluation %s : %.2f/100\n\n", file, evaluation_NChaines(gammaMax,total_size,file));
-      /* reinit_gamma(G); */
-    /*   parametre += 10.; */
-    /* } */
+  printf("\tParametre %.2f\n", parametre);
+  printf("Total size : %.2f\t", total_size);
+  printf("Gamma max : %d\n", gammaMax);
+  printf("evaluation %s : %.2f/100\n\n", file, evaluation_NChaines(gammaMax,total_size,file));
+  /* reinit_gamma(G); */
+  /*   parametre += 10.; */
+  /* } */
   
   return 0;
 }
