@@ -40,8 +40,7 @@ make clean
 # time ./MainGraphe "07397_pla" 3
 
 
-
-
+#TESTS PARTIE 3
 # ------------------- TEST TEMPS ------------------ #
 # echo "               DJIKSTRA
 # real    0m0.037s
@@ -68,31 +67,31 @@ make clean
 
 
 # ------------------ TEST EVALUATION -------------------- #
-echo "       parcours largeur
-Total size : 111541.67  Gamma max : 50
-evaluation 00783_rat : 52.73/100
-        Djikstra
-Total size : 92070.96   Gamma max : 68
-evaluation 00783_rat : 23.98/100
------------------"
-./MainGraphe "00783_rat" 4
+# echo "       parcours largeur
+# Total size : 111541.67  Gamma max : 50
+# evaluation 00783_rat : 52.73/100
+#         Djikstra
+# Total size : 92070.96   Gamma max : 68
+# evaluation 00783_rat : 23.98/100
+# -----------------"
+# ./MainGraphe "00783_rat" 4
 
-echo "______________________________________________________
-        parcours largeur
-Total size : 33467313.90        Gamma max : 300
-evaluation 05934_rl : 47.02/100
-        Djikstra
-Total size : 20907102.22        Gamma max : 223
-evaluation 05934_rl : 79.76/100
------------------"
-./MainGraphe "05934_rl" 4
+# echo "______________________________________________________
+#         parcours largeur
+# Total size : 33467313.90        Gamma max : 300
+# evaluation 05934_rl : 47.02/100
+#         Djikstra
+# Total size : 20907102.22        Gamma max : 223
+# evaluation 05934_rl : 79.76/100
+# -----------------"
+# ./MainGraphe "05934_rl" 4
 
-echo "______________________________________________________
-        parcours largeur
-Total size : 2602531252.73      Gamma max : 1318
-evaluation 07397_pla : 24.44/100
-        Djikstra
-Total size : 1852477205.87      Gamma max : 1312
-evaluation 07397_pla : 34.63/100
------------------"
-./MainGraphe "07397_pla" 4
+# echo "______________________________________________________
+#         parcours largeur
+# Total size : 2602531252.73      Gamma max : 1318
+# evaluation 07397_pla : 24.44/100
+#         Djikstra
+# Total size : 1852477205.87      Gamma max : 1312
+# evaluation 07397_pla : 34.63/100
+# -----------------"
+# ./MainGraphe "07397_pla" 4

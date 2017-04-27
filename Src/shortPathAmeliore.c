@@ -112,8 +112,8 @@ int shortPathAmeliore(Graphe *G, char *file)
   /* if ((f=fopen(filenamencha,"w")) == NULL) */
   /*   return 1; */
   f = stdout;
-  while (parametre <= 100.)
-    {
+  /* while (parametre <= 100.) */
+  /*   { */
       int gammaMax=0;
       double total_size = 0;
       for (i=0 ; i<G->nbcommod ; i++)
@@ -128,9 +128,9 @@ int shortPathAmeliore(Graphe *G, char *file)
       printf("Total size : %.2f\t", total_size);
       printf("Gamma max : %d\n", gammaMax);
       printf("evaluation %s : %.2f/100\n\n", file, evaluation_NChaines(gammaMax,total_size,file));
-      reinit_gamma(G);
-      parametre += 10.;
-    }
+      /* reinit_gamma(G); */
+    /*   parametre += 10.; */
+    /* } */
   
   return 0;
 }
