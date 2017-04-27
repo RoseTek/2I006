@@ -1,0 +1,12 @@
+BRUNO Lauranne 3602844
+
+
+Partie du projet non réalisée : quadtree (problème évoqué en soutenance)
+Réalisation de la courbe à l'aide d'un script
+Usage : ./main file
+      menu pour tester liste et hachage
+Usage : ./main file <params...>
+      teste la partie préliminaire
+
+Les fichiers produits sont dans le dossier output
+Les fichiers d'entrée ont été retirés de l'archive rendue
