@@ -20,7 +20,7 @@ void show_path(int *pred, int u, int v, FILE *f, Graphe *G, double *total_size, 
   	    *gammaMax = arr->calc_gamma;
   	}
     }
-  /* fprintf(f, "%d ", v); */
+  fprintf(f, "%d ", v);
 }
 
 /* indices avec -1 => numerotation noeud commence à 1 */
